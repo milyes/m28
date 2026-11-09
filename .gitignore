@@ -1,0 +1,9 @@
+*.log
+zcore_production.log
+zcore_nans.log
+payload_*
+contrat_confidentiel_client.pdf
+*.tar.gz
+*.zip
+__pycache__/
+.git/
