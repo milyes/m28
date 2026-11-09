@@ -7,3 +7,4 @@ contrat_confidentiel_client.pdf
 *.zip
 __pycache__/
 .git/
+zip_project.sh
