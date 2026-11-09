@@ -35,4 +35,4 @@ chmod +x deploy_zcore_nans_2028_final.sh
 ```
 
 ---
-**Architecte :** Mohammed Ilyes Zoubirou ([@milyes](https://github.com/milyes)) | Montréal, QC.
+**Architecte :** Mohammed Ilyes Zoubirou ([@milyes](https://github.com)) | Montréal, QC.
