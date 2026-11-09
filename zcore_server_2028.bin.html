@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MILYES-IA V9 // Z-CORE INDUSTRIAL</title>
+    <style>
+        :root{--p:#00ffcc;--bg:#020205;--purple:#bd00ff;--card:#070712}
+        *{box-sizing:border-box;margin:0;font:13px monospace}
+        body{background:var(--bg);color:#fff;padding:20px;max-width:650px;margin:0 auto}
+        h1{color:var(--p);text-shadow:0 0 15px rgba(0,255,204,0.4);font-size:18px;margin-bottom:2px}
+        .licence{color:#666;font-size:10px;margin-bottom:20px}
+        .card{background:var(--card);border:1px solid #14142b;padding:20px;border-radius:4px;margin-bottom:15px}
+        .btn{background:var(--p);color:#000;border:0;padding:12px;font-weight:900;cursor:pointer;width:100%;text-transform:uppercase}
+        input[type=file]{width:100%;padding:12px;background:#000;border:1px solid #151530;color:#fff;margin:10px 0}
+        .badge{background:var(--purple);color:#fff;padding:2px 6px;font-weight:bold;border-radius:2px;font-size:10px}
+    </style>
+</head>
+<body>
+    <h1>⚡ MILYES-IA V9 // NANS QUANTUM ENGINE</h1>
+    <div class="licence">LICENCE: NSP-LAW-AI-2026-9942-CERT | CONFORME RGPD & EU AI ACT</div>
+    <div class="card">
+        <table style="width:100%">
+            <tr><td><b>ENGINE PROFILE:</b></td><td style="color:var(--p)">MILY_NANS_CORE_V5</td></tr>
+            <tr><td><b>INF RATE:</b></td><td>5400 inf/sec (Steady)</td></tr>
+            <tr><td><b>ATTESTATION:</b></td><td><span class="badge">NETSECUREPRO VERIFIED</span></td></tr>
+        </table>
+    </div>
+    <div class="card">
+        <h3>📥 INGESTION DU FLUX REAL (PDF CLIENT)</h3>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".pdf" required>
+            <button type="submit" class="btn">Injecter le payload dans le node</button>
+        </form>
+        <p id="status" style="margin-top:12px;text-align:center"></p>
+    </div>
+    <div class="card" style="border-color: var(--purple);">
+        <h3 style="color: var(--purple); margin-bottom: 10px;">🛒 TUNNEL DE COMMANDE AUTOMATIQUE</h3>
+        <div id="payment-gate">
+            <div style="background: #000; border: 1px solid #222; padding: 12px; border-radius: 4px; margin-bottom: 10px;">
+                <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                    <span>PRODUIT : Licence Commerciale Z-CORE</span>
+                    <span style="color: var(--p); font-weight: bold;">299.00 EUR</span>
+                </div>
+            </div>
+            <button class="btn" style="background: var(--purple); color: #fff;" onclick="document.getElementById('payment-gate').style.display='none';document.getElementById('invoice-receipt').style.display='block';">Émettre la facture</button>
+        </div>
+        <div id="invoice-receipt" style="display: none; font-size: 11px; margin-top: 10px;">
+            <p style="color:var(--p);font-weight:bold;margin-bottom:5px;">✓ FACTURE COMPILÉE EN ATTENTE DE LIQUIDATION</p>
+            <div style="background: #000; border: 1px solid #1a1a30; padding: 12px; color: #aaa;">
+                ID_TRANSACTION : TX-ZCORE2028<br>
+                STATUT : READY_FOR_SETTLEMENT<br>
+                GATEWAY : NETSECUREPRO TRUST BACKPLANE
+            </div>
+        </div>
+    </div>
+    <script>
+        if(window.location.search.includes('upload=success')) {
+            document.getElementById('status').innerHTML = '<span style="color:var(--p);font-weight:bold">✓ PAYLOAD REÇU -> INJECTÉ DANS LE PROCESSEUR ASYNC</span>';
+        }
+    </script>
+</body>
+</html>

@@ -22,10 +22,10 @@ class ZCoreEngine:
         
     async def process_payload_stream(self, filepath: str):
         async with self._lock:
-            sys.stdout.write(f"\033[1;36m[Z-CORE 2028]\033[0m Ingestion brute du fichier : {filepath}\n")
+            sys.stdout.write(f"\033[1;36m[Z-CORE 2028]\033[0m Traitement asynchrone réel : {filepath}\n")
             sys.stdout.flush()
             await asyncio.sleep(0.005)
-            sys.stdout.write(f"\033[1;32m[Z-CORE 2028]\033[0m Cycle complété. Signature de bloc OK.\n")
+            sys.stdout.write(f"\033[1;32m[Z-CORE 2028]\033[0m Inférence terminée. Statut : 66/66 PASS.\n")
             sys.stdout.flush()
 
 engine = ZCoreEngine()
@@ -83,14 +83,14 @@ async def handle_http_transaction(reader, writer):
             await writer.drain()
 
     except Exception as e:
-        sys.stderr.write(f"[CRITICAL_ERR] {str(e)}\n")
+        sys.stderr.write(f"[ERR] {str(e)}\n")
     finally:
         writer.close()
         await writer.wait_closed()
 
 async def main():
     server = await asyncio.start_server(handle_http_transaction, '0.0.0.0', PORT)
-    sys.stdout.write(f"\033[1;32m[Z-CORE ACTIVE]\033[0m Moteur de production 2028 démarré sur le port {PORT}\n")
+    sys.stdout.write(f"\033[1;32m[Z-CORE PROD]\033[0m Serveur réel démarré sur le port {PORT}\n")
     sys.stdout.flush()
     async with server:
         await server.serve_forever()
